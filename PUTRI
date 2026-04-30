@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Membership Pilates</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    input, select { width: 300px; padding: 8px; margin-top: 5px; }
+    button { padding: 10px; background: green; color: white; border: none; margin-top: 10px; }
+  </style>
+</head>
+<body>
+
+  <h2>Form Join Membership Pilates</h2>
+
+  <form onsubmit="kirimWA(); return false;">
+
+    <label>Nama Lengkap:</label><br>
+    <input type="text" id="nama" required><br><br>
+
+    <label>No HP (WhatsApp):</label><br>
+    <input type="text" id="nohp" required><br><br>
+
+    <label>Plan Membership:</label><br>
+    <input type="radio" name="plan" value="Trial Class"> Trial Class<br>
+    <input type="radio" name="plan" value="Private Class"> Private Class<br>
+    <input type="radio" name="plan" value="Group Membership 3 Bulan"> Group Membership 3 Bulan<br>
+    <input type="radio" name="plan" value="Group Membership 6 Bulan"> Group Membership 6 Bulan<br>
+    <input type="radio" name="plan" value="Group Membership 12 Bulan"> Group Membership 12 Bulan<br><br>
+
+    <label>Time Available:</label><br>
+    <select id="time">
+      <option value="Morning">Morning</option>
+      <option value="Afternoon">Afternoon</option>
+      <option value="Night">Night</option>
+    </select><br><br>
+
+    <button type="submit">Daftar via WhatsApp</button>
+
+  </form>
+
+  <script>
+    function kirimWA() {
+      var nama = document.getElementById("nama").value;
+      var nohp = document.getElementById("nohp").value;
+      var time = document.getElementById("time").value;
+
+      var plan = document.querySelector('input[name="plan"]:checked');
+      if (!plan) {
+        alert("Pilih plan membership dulu!");
+        return;
+      }
+
+     var pesan = 
+        "Halo Motion Pilates,%0A%0A" +
+        "Saya ingin mendaftar membership dengan detail berikut:%0A%0A" +
+        "Nama: " + nama + "%0A" +
+        "No HP: " + nohp + "%0A" +
+        "Plan: " + plan.value + "%0A" +
+        "Waktu: " + time + "%0A%0A" +
+        "Mohon info lebih lanjut ya. Terima kasih 🙏";
+
+      // GANTI NOMOR INI
+      var nomor = "6283164569368";
+
+      var url = "https://wa.me/" + nomor + "?text=" + pesan;
+
+      window.open(url, '_blank');
+    }
+  </script>
+
+</body>
+</html>
