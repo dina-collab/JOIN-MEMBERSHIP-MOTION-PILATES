@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Motion Pilates Membership</title>
+  <title>MOTION PILATES Membership</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -31,9 +31,11 @@
 
     .brand {
       text-align: center;
-      font-style: italic;
+      font-weight: bold;
+      font-size: 24px;
       color: #555;
       margin-bottom: 20px;
+      text-transform: uppercase;
     }
 
     input, select {
@@ -67,7 +69,7 @@
 
     <!-- JUDUL -->
     <h2>Join Membership</h2>
-    <div class="brand"><b><i>MOTION PILATES</i></b></div>
+    <div class="brand">MOTION PILATES</div>
 
     <!-- FORM -->
     <form onsubmit="kirimWA(); return false;">
@@ -79,12 +81,12 @@
       <input type="text" id="nohp" required><br><br>
 
       <label>Plan Membership:</label><br>
-<select id="plan">
-  <option value="Private Class">Private Class</option>
-  <option value="Group Membership 3 Bulan">Group Membership 3 Bulan</option>
-  <option value="Group Membership 6 Bulan">Group Membership 6 Bulan</option>
-  <option value="Group Membership 12 Bulan">Group Membership 12 Bulan</option>
-</select><br><br>
+      <select id="plan">
+        <option value="Private Class">Private Class</option>
+        <option value="Group Membership 3 Bulan">Group Membership 3 Bulan</option>
+        <option value="Group Membership 6 Bulan">Group Membership 6 Bulan</option>
+        <option value="Group Membership 12 Bulan">Group Membership 12 Bulan</option>
+      </select><br><br>
 
       <label>Time Available:</label><br>
       <select id="time">
@@ -107,7 +109,7 @@
       var plan = document.getElementById("plan").value;
 
       var pesan = 
-        "Halo Motion Pilates,%0A%0A" +
+        "Halo MOTION PILATES,%0A%0A" +
         "Saya ingin mendaftar membership dengan detail berikut:%0A%0A" +
         "Nama: " + nama + "%0A" +
         "No HP: " + nohp + "%0A" +
